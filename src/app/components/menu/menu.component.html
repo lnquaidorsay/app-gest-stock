@@ -1,0 +1,68 @@
+<!--<div class="accordion" id="appMenuAccordion">
+    <div class="card" *ngFor="let menu of menuProperties">
+        <div class="card-header" id="menu{{menu.id}}">
+            <h2 class="mb-0">
+                <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" [attr.data-target]="'#collapse' + menu.id" aria-expanded="true" aria-controls="collapseOne">
+          <i class="{{menu.icon}}"></i>&nbsp; &nbsp;
+          {{menu.titre}}
+        </button>
+            </h2>
+        </div>
+
+        <div id="collapse{{menu.id}}" class="collapse" [attr.aria-labelledby]="'menu' + menu.id" data-parent="#appMenuAccordion">
+
+            <div class="card">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item" *ngFor="let sousMenu of menu.sousMenu" [ngClass]="{'text-white bg-primary': sousMenu.active, '': !sousMenu.active}">
+                        <a href="javascript:void(0);" (click)="navigate(sousMenu)" style="color: inherit;">
+                            <i class="{{sousMenu.icon}}"></i>&nbsp; {{sousMenu.titre}}
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<!-- <div class="accordion ml-2" id="accordionMenuExample" *ngFor="let menu of menuProperties">
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="Menu-heading{{menu.id}}">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#Menu-collapse'+ menu.id" aria-expanded="true" [attr.aria-controls]="'#Menu-collapse'+ menu.id">
+              <i class="{{menu.icon}}"></i> &nbsp;&nbsp;{{menu.titre}}
+      </button>
+        </h2>
+        <div *ngIf="menu.sousMenu !== undefined && menu.sousMenu.length > 0" id="Menu-collapse{{menu.id}}" class="accordion-collapse collapse show" [attr.aria-labelledby]="'Menu-heading'+ menu.id" data-bs-parent="#accordionMenuExample">
+            <div class="accordion-body">
+                <a href="javascript:void(0);" (click)="navigate(menu)" style="color: inherit;">
+                    <i class="{{menu.icon}}"></i>&nbsp; {{menu.titre}}
+                </a>
+                Element {{menu.id}}
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<ul class="list-group" *ngFor="let menu of menuProperties">
+    <li class="list-group-item" aria-current="true">
+        <a href="javascript:void(0);" (click)="navigate(menu)" style="text-decoration:none;">
+            <i class="{{menu.icon}}"></i>&nbsp;&nbsp;{{menu.titre}}
+        </a>
+    </li>
+</ul>
+
+<!-- <div class="accordion ml-2" id="accordionMenuExample" *ngFor="let menu of menuProperties">
+  <div class="accordion-item">
+      <h2 class="accordion-header" id="Menu-heading{{menu.id}}">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#Menu-collapse'+ menu.id" aria-expanded="true" [attr.aria-controls]="'#Menu-collapse'+ menu.id">
+            <i class="{{menu.icon}}"></i> #{{menu.id}}
+    </button>
+      </h2>
+      <div id="Menu-collapse{{menu.id}}" class="accordion-collapse collapse show" [attr.aria-labelledby]="'Menu-heading'+ menu.id">
+          <div class="accordion-body">
+              <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing
+              and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does
+              limit overflow.
+          </div>
+      </div>
+  </div>
+</div> -->
